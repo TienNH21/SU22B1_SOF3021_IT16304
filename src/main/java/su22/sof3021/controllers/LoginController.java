@@ -30,6 +30,6 @@ public class LoginController {
 	{
 		System.out.println(login.getEmail());
 		System.out.println(login.getPassword());
-		return "login";
+		return "redirect:login";
 	}
 }
