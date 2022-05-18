@@ -1,5 +1,12 @@
 package su22.sof3021.beans;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,11 +17,25 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
+	@NotBlank(message="Không được để trống")
 	private String hoTen;
+
+	@NotBlank
 	private String diaChi;
+
+	@NotNull
 	private int gioiTinh;
+
+	@NotBlank
+	@Email
+	@Pattern(regexp="$(fpt.edu.vn)")
 	private String email;
+
+	@NotBlank
 	private String password;
+	
+	@NotBlank
 	private String sdt;
+	
 	private String avatar;
 }
