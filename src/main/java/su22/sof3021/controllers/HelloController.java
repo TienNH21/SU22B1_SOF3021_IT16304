@@ -34,6 +34,7 @@ public class HelloController {
 //		) String hoTen
 		@RequestParam(name="ho_ten") Optional<String> hoTen
 	) {
+		System.out.println("HelloController - hello");
 		String name = "";
 		if (hoTen.isPresent()) {
 			name = hoTen.get();

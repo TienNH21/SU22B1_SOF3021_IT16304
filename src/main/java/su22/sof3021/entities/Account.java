@@ -15,7 +15,8 @@ import lombok.Data;
 @Entity
 @Table(name="accounts")
 @NamedQueries(
-	@NamedQuery(name="Account.findByEmail", query="SELECT o FROM Account o WHERE email = :email")
+	@NamedQuery(name="Account.findByEmail",
+		query="SELECT o FROM Account o WHERE email = :email")
 )
 public class Account {
 	@Id
